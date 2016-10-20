@@ -1,0 +1,1 @@
+python odoo-bin.py -c odoo.conf -u report_docx
