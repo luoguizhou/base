@@ -1906,7 +1906,7 @@ class Many2one(_Relational):
             # access rights, and not the value's access rights.
             try:
                 # performance: value.sudo() prefetches the same records as value
-                return value.sudo().name_get()[0]
+                return value.sudo(value._uid).name_get()[0]
             except MissingError:
                 # Should not happen, unless the foreign key is missing.
                 return False
